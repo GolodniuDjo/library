@@ -1,16 +1,75 @@
+/** ----- Задача № 1 ----- **/
+//написать конструктор (со всеми полями) +
+//написать геттеры сеттеры +
+//переопределить метод toString()
+
+//потом идем в метод main
+
+//поведение книги (методы) пока не пишем
+/** ----- Задача № 1 ----- **/
 package model;
 
 public class Book {
-    //поля класса:
-    String title;
-    String author;
-    int year;
+    /** ----- Поля класса: ----- **/
+    private String title;
+    private String author;
+    private int year;
 
-    //написать конструктор (со всеми полями)
-    //написать геттеры сеттеры
-    //переопределить метод toString()
+   /* public static void main(String[] args) {
+        Book voinaIMir = new Book();
 
-    //потом идем в метод main
+        voinaIMir.title = "Война и мир";
+        voinaIMir.author = "Лев Николаевич Толстой";
+        voinaIMir.year = "1863";
+    }*/
+    /** ----- Конструктор (со всеми полями) ----- **/
+    public Book(String title, String author, int year) {
+        this.title = title;
+        this.author = author;
+        this.year = year;
+    }
 
-    //поведение книги (методы) пока не пишем
+    /** ----- Геттеры и сеттеры ----- **/
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    /** ----- Переопределение метода toString() ----- **/
+    @Override
+    public String toString() {
+        return
+                "Название произведения: \"" + title +"\" " +
+                        "\nАвтор произведения: " + author +
+                        "\nГод произведения: " + year + " г.";
+
+    }
+    /** ----- Идем в метод Main ----- **/
+    public static void main(String[] args) {
+        // Создаем объект класса Book
+        Book voinaImir = new Book("Война и мир", "Лев Толстой", 1863);
+
+        // Выводим информацию о книге
+        System.out.println("Информация о выбранном произведении:");
+        System.out.println(voinaImir);
+    }
 }
